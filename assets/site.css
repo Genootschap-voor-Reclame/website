@@ -50,7 +50,7 @@ button:focus-visible{outline:2px solid #C8102E;outline-offset:3px}
 }
 /* Header blijft bovenaan staan bij scrollen */
 body > div > header{position:sticky;top:0;z-index:50;background:#F4EFE7}
-/* Ankers (§01, §05, tijdperken) niet onder de vaste header laten landen */
+/* Ankers (01, 05, tijdperken) niet onder de vaste header laten landen */
 [id]{scroll-margin-top:96px}
 @media (min-width: 721px) and (max-width: 900px){
   [id]{scroll-margin-top:132px}
@@ -141,7 +141,7 @@ body > div > main{flex:1 0 auto}
 @media (min-width: 721px){h1,h2{text-wrap:balance}}
 @media (max-width: 720px){.inleiding-tegel{display:none}}
 
-/* Home §01: foto links, tekst rechts; op mobiel de foto onder de tekst */
+/* Home 01: foto links, tekst rechts; op mobiel de foto onder de tekst */
 .genootschap{display:grid;grid-template-columns:minmax(240px,1fr) 2fr;gap:48px}
 @media (max-width: 760px){
   .genootschap{grid-template-columns:1fr}

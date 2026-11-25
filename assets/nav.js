@@ -20,7 +20,7 @@
     }
   });
 
-  // Klik op een anker binnen de pagina (§01, §05) sluit het menu.
+  // Klik op een anker binnen de pagina (01, 05) sluit het menu.
   menu.addEventListener('click', function (e) {
     if (e.target.closest('a')) zet(false);
   });
