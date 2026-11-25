@@ -25,3 +25,11 @@
     if (e.target.closest('a')) zet(false);
   });
 })();
+
+// Jaargangen in een verslag: op smalle schermen scrolt de rij, het huidige jaar staat in beeld.
+(function () {
+  var rij = document.querySelector('.jaargangen');
+  var huidig = rij && rij.querySelector('[aria-current="page"]');
+  if (!huidig || rij.scrollWidth <= rij.clientWidth) return;
+  rij.scrollLeft = huidig.offsetLeft - rij.offsetLeft - (rij.clientWidth - huidig.offsetWidth) / 2;
+})();

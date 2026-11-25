@@ -79,3 +79,88 @@ body > div > header{position:sticky;top:0;z-index:50;background:#F4EFE7}
 @media (max-width: 720px){.fieldtrip-fotos{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.fieldtrip-fotos img{height:180px !important}}
 /* Activiteiten: drie Hanendiner-kaarten op een rij, op mobiel onder elkaar */
 @media (max-width: 720px){.hanen-kaarten{grid-template-columns:1fr !important}}
+
+/* Toegankelijkheid: link naar de inhoud, tekst alleen voor schermlezers */
+.skiplink{position:absolute;left:16px;top:-80px;z-index:100;padding:12px 16px;background:#161414;color:#F4EFE7;font-family:'IBM Plex Mono',monospace;font-size:13px}
+.skiplink:focus{top:16px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+main{display:block}
+/* Compacte footer op alle pagina's behalve de homepage */
+.voet{background:#161414;color:#B9B1A5;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6}
+.voet a{color:#F4EFE7}
+.voet a:hover{color:#E8324A}
+.voet-binnen{max-width:1320px;margin:0 auto;padding:40px clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
+.voet-bronnen{flex-basis:100%;margin:0 0 8px;padding-bottom:20px;border-bottom:1px solid #3A3532}
+.voet-logo{display:inline-flex;align-items:center;gap:14px;text-decoration:none}
+.voet-mono{display:inline-flex;align-items:baseline;font-family:'Gloock',serif;font-size:30px;line-height:.8;color:#F4EFE7}
+.voet-mono em{font-family:'Instrument Serif',serif;font-size:26px;color:#E8324A;margin:0 -.08em 0 -.1em}
+.voet-mail{font-size:14px}
+.voet-links a,.voet-mail{display:inline-flex;align-items:center;min-height:44px}
+.voet-links a{color:#B9B1A5}
+/* De footer staat onderaan het scherm, ook op korte pagina's */
+body > div{display:flex;flex-direction:column}
+body > div > main{flex:1 0 auto}
+/* Verslag: feitenblok onder de inleiding, uitgelijnd met de onderkant van de foto */
+.inleiding .feiten{margin-top:auto !important;padding-top:0}
+.inleiding-tegel{flex:1 1 360px;min-height:360px;background:#161414;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.inleiding-tegel .vervolg-label{color:#B9B1A5}
+/* Monogramtegel: G v R met de prijsbalk, op inkt */
+.mono-tegel{display:flex;flex-direction:column;justify-content:space-between;gap:24px;background:#161414;padding:24px}
+.inleiding-tegel .mono-tegel{padding:0;flex:1}
+.mono-letters{display:flex;align-items:baseline;font-family:'Gloock',serif;font-size:72px;line-height:.8;color:#F4EFE7}
+.mono-letters em{font-family:'Instrument Serif',serif;font-size:62px;color:#E8324A;margin:0 -.08em 0 -.1em}
+.mono-balk{display:flex;height:12px}
+.mono-balk span:nth-child(1){flex:3;background:#C8102E}
+.mono-balk span:nth-child(2){flex:2;background:#1E4C9A}
+.mono-balk span:nth-child(3){flex:1;background:#F2C300}
+/* Verslag: Hanen. Naamkolom vast, motivering ernaast */
+.haan{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:16px 48px;padding:36px 0;border-top:1px solid #D9CFC0}
+.hanen-rij{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0 48px}
+.hanen-rij .haan{grid-template-columns:1fr}
+@media (max-width: 720px){.haan{grid-template-columns:1fr}}
+/* Verslag: jaargangen. 'Alle jaren' rechts; op smallere schermen één regel die scrolt */
+.jaargangen .alle-jaren{margin-left:auto}
+@media (max-width: 1100px){
+  .jaargangen{flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none}
+  .jaargangen::-webkit-scrollbar{display:none}
+  .jaargangen a{flex:none}
+  .jaargangen .alle-jaren{margin-left:0;padding-left:12px}
+}
+/* Verslag: vorig en volgend jaar, en de erelijst */
+.vervolg{background:#E9E1D4;border-top:2px solid #161414}
+.vervolg-binnen{max-width:1320px;margin:0 auto;padding:72px clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.vervolg-kaart{display:flex;flex-direction:column;gap:10px;text-decoration:none}
+.vervolg-kaart img,.vervolg-kaart .mono-tegel{width:100%;height:240px;object-fit:cover;display:flex}
+.vervolg-kaart img{display:block}
+.vervolg-label{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5E5850;margin-top:6px}
+.vervolg-titel{font-family:'Gloock',serif;font-size:36px;line-height:1}
+.vervolg-titel em{font-family:'Instrument Serif',serif;color:#C8102E}
+.vervolg-namen{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.5}
+.vervolg-kaart:hover .vervolg-titel{color:#C8102E}
+/* Koppen: gebalanceerde regelbreuk op brede schermen (op mobiel geeft dat te korte regels) */
+@media (min-width: 721px){h1,h2{text-wrap:balance}}
+@media (max-width: 720px){.inleiding-tegel{display:none}}
+
+/* Home §01: foto links, tekst rechts; op mobiel de foto onder de tekst */
+.genootschap{display:grid;grid-template-columns:minmax(240px,1fr) 2fr;gap:48px}
+@media (max-width: 760px){
+  .genootschap{grid-template-columns:1fr}
+  .genootschap-links{display:contents !important}
+  .genootschap-links figure{order:3}
+  .genootschap-tekst{order:2}
+}
+/* Rijen van vier: 4, dan 2×2, dan 1 (nooit 3+1) */
+.vier{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width: 1100px){.vier{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 600px){.vier{grid-template-columns:1fr}}
+/* Geschiedenis: tijdperkkop schuift mee met de tijdlijn */
+@media (min-width: 721px){.tijdperk-kop{position:sticky;top:120px;align-self:flex-start}}
+@media (max-width: 720px){.tijdperk-kop{flex-basis:100% !important}}
+.bestuur{list-style:none;margin:0;padding:0;border-top:2px solid #161414;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 32px;font-size:16px;line-height:1.45}
+.bestuur li{padding:14px 0;border-bottom:1px solid #D9CFC0}
+.hanen-fotos a{display:block}
+
+/* Erelijst: namen linken naar de motivering; lege cel toont op brede schermen een punt */
+[aria-label="Erelijst per jaar"] td a{color:inherit;text-decoration-color:#D9CFC0;text-underline-offset:4px}
+[aria-label="Erelijst per jaar"] td a:hover{color:#C8102E;text-decoration-color:currentColor}
+@media (min-width: 721px){[aria-label="Erelijst per jaar"] td:empty::after{content:"·";color:#B9B1A5}}
